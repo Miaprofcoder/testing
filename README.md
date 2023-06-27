@@ -30,7 +30,7 @@ Video Link (user flow): https://drive.google.com/file/d/17zLIx-F-NzWiDYD7BGQRYVb
 
 ## Credits
 
-Below are additional resources I used aside from the activities file in Module 11 - Express
+Below are additional resources I used aside from the activities file in Module 11 - Express   
 
 Tutorials:
 * https://www.youtube.com/watch?v=wiFW3gQgfd8
