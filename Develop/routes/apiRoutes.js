@@ -5,15 +5,17 @@ const router = express.Router();
 // import store.js from db folder for adding and removing notes
 const store = require("../db/store");
 
+//when a get request is made to /notes, retrieve the notes using getNotes() in store.js
 router.get("/notes", (req, res) => {
   store
     .getNotes()
+
+    //send the notes as a JSON response
     .then((notes) => res.json(notes))
+
+    //if error occurs, will send 500 status code
     .catch((err) => res.status(500).json(err));
-  // When a GET request is made to '/notes' endpoint,
-  // retrieve the notes using the store's getNotes() method,
-  // and send the notes as a JSON response
-  // If an error occurs, send a 500 status code and the error message as JSON
+
 });
 
 router.post("/notes", (req, res) => {
