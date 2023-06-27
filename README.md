@@ -26,7 +26,7 @@ Given a note-taking application, users are presented with a landing page with a 
 
 URL of Github repository : https://github.com/mvfranzke/Note-Taker
 
-Video Link (user flow): https://drive.google.com/file/d/1jCyyVu1zKicMkUt-9tGtRsUNG-j6Wylo/view
+Video Link (user flow): https://drive.google.com/file/d/17zLIx-F-NzWiDYD7BGQRYVbENZPf64AR/view
 
 ## Credits
 
