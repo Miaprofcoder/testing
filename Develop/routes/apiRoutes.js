@@ -32,15 +32,18 @@ router.post("/notes", (req, res) => {
   
 });
 
+
+//when a delete request is made to delete notes for a specified id, use removeNote() method declared in store.js
 router.delete("/notes/:id", (req, res) => {
   store
     .removeNote(req.params.id)
+
+    //sends confirmation json response
     .then(() => res.json({ success: true }))
+
+    //respond with status 500 for any error that occurs
     .catch((err) => res.status(500).json(err));
-  // When a DELETE request is made to '/notes/:id' endpoint,
-  // remove the note with the specified ID using the store's removeNote() method,
-  // and send a JSON response indicating success
-  // If an error occurs, send a 500 status code and the error message as JSON
+  
 });
 
 module.exports = router;
