@@ -93,13 +93,13 @@ class Store {
   // remove note by specific id
   async removeNote(id) {
     try {
-      // retrieves existing note using .getnotes()
+      // read all notes from the `db.json` file
       const notes = await this.getNotes();
 
-      //create variable filteredNotes to filter existing note based from specific id assigned to it
+      //create variable filteredNotes to filter existing note based from specific id assigned to it for deletion
       const filteredNotes = notes.filter((note) => note.id !== parseFloat(id));
 
-      //using write(), writes filtereNotes array to the file using the write method
+      //rewrite the notes to the `db.json` file
       await this.write(filteredNotes);
 
       //for any error that occurs, catch and throw the error
