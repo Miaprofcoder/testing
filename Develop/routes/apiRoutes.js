@@ -1,25 +1,42 @@
-// Importing the Express framework, apiRoutes and htmlRoutes module
+//import express module, declare variable for express router
 const express = require("express");
-const apiRoutes = require("./routes/apiRoutes"); 
-const htmlRoutes = require("./routes/htmlRoutes"); 
+const router = express.Router();
 
-// Creating variable for express application and set the port number in the server
-const app = express(); 
-const PORT = process.env.PORT || 3000; 
+// import store.js from db folder for adding and removing notes
+const store = require("../db/store");
 
-//Setting middleware to parse url, json bodies and static file from the public directory
-app.use(express.urlencoded({ extended: true })); 
-app.use(express.json()); 
-app.use(express.static("public")); 
-
-//using the apiRoutes.js module for routes starting with /api
-app.use("/api", apiRoutes); 
-
-//using the htmlRoutes.js module for routes starting with /
-app.use("/", htmlRoutes);
-
-//initiating the server and listening to the port declared above 
-app.listen(PORT, () => {
-
-  console.log(`Server is running on http://localhost:${PORT}`);
+router.get("/notes", (req, res) => {
+  store
+    .getNotes()
+    .then((notes) => res.json(notes))
+    .catch((err) => res.status(500).json(err));
+  // When a GET request is made to '/notes' endpoint,
+  // retrieve the notes using the store's getNotes() method,
+  // and send the notes as a JSON response
+  // If an error occurs, send a 500 status code and the error message as JSON
 });
+
+router.post("/notes", (req, res) => {
+  store
+    .addNote(req.body)
+    .then((note) => res.json(note))
+    .catch((err) => res.status(500).json(err));
+  // When a POST request is made to '/notes' endpoint,
+  // add a new note using the store's addNote() method with the request body,
+  // and send the newly added note as a JSON response
+  // If an error occurs, send a 500 status code and the error message as JSON
+});
+
+router.delete("/notes/:id", (req, res) => {
+  store
+    .removeNote(req.params.id)
+    .then(() => res.json({ success: true }))
+    .catch((err) => res.status(500).json(err));
+  // When a DELETE request is made to '/notes/:id' endpoint,
+  // remove the note with the specified ID using the store's removeNote() method,
+  // and send a JSON response indicating success
+  // If an error occurs, send a 500 status code and the error message as JSON
+});
+
+module.exports = router;
+// Exporting the router module for use in other files
