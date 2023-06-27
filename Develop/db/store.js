@@ -29,11 +29,10 @@ class Store {
 
       //for any error that occurs, catch and throw the error
     } catch (error) {
-      
+
       throw error;
     }
   }
-
 
 
   //retrieve the notes from file
@@ -56,18 +55,36 @@ class Store {
 
   // function to add new note
   async addNote(note) {
+
+
+    //destructure title and text from note object
     const { title, text } = note;
+
+    //checker if title and text are null
     if (!title || !text) {
-      throw new Error("Note 'title' and 'text' cannot be blank");
+
+      //error message user receives
+      throw new Error("Please enter note title and text");
     }
+    // variable to create new note, uses Math.random() method to generate unique id
     const newNote = { title, text, id: Math.random() };
 
     try {
+      //retrieve the existing note
       const notes = await this.getNotes();
+
+      //creates new array updatedNotes, combining existing notes with new note
       const updatedNotes = [...notes, newNote];
+
+      //write updatedNotes array on the file using .write()
       await this.write(updatedNotes);
+
+      //return new created note
       return newNote;
+
+      //for any error that occurs, catch and throw the error
     } catch (error) {
+      
       throw error;
     }
   }
