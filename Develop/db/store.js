@@ -84,7 +84,7 @@ class Store {
 
       //for any error that occurs, catch and throw the error
     } catch (error) {
-      
+
       throw error;
     }
   }
@@ -93,9 +93,16 @@ class Store {
   // remove note by specific id
   async removeNote(id) {
     try {
+      // retrieves existing note using .getnotes()
       const notes = await this.getNotes();
+
+      //create variable filteredNotes to filter existing note based from specific id assigned to it
       const filteredNotes = notes.filter((note) => note.id !== parseFloat(id));
+
+      //using write(), writes filtereNotes array to the file using the write method
       await this.write(filteredNotes);
+
+      //for any error that occurs, catch and throw the error
     } catch (error) {
       throw error;
     }
