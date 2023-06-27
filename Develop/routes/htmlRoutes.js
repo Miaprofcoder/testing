@@ -5,10 +5,11 @@ const express = require("express");
 // declare variable router for express
 const router = express.Router(); 
 
+
+// when a get request is made to /notes, then notes.html in public directory is sent to user
 router.get("/notes", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/notes.html"));
-  // When a GET request is made to '/notes' endpoint,
-  // send the 'notes.html' file located in the 'public' directory
+  
 });
 
 router.get("*", (req, res) => {
