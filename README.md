@@ -33,11 +33,13 @@ Video Link (user flow): https://drive.google.com/file/d/1jCyyVu1zKicMkUt-9tGtRsU
 Below are additional resources I used aside from the activities file in Module 11 - Express
 
 Tutorials:
-https://www.youtube.com/watch?v=wiFW3gQgfd8
+* https://www.youtube.com/watch?v=wiFW3gQgfd8
 
-https://www.geeksforgeeks.org/node-js-fspromises-readfile-method/
-https://www.geeksforgeeks.org/node-js-fspromises-writefile-method/
-https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+* https://javascript.info/async-await
+* https://www.geeksforgeeks.org/node-js-fspromises-readfile-method/
+* https://www.geeksforgeeks.org/node-js-fspromises-writefile-method/
+* https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm
 
 ## License
 N/A
