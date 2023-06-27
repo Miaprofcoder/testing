@@ -12,10 +12,11 @@ router.get("/notes", (req, res) => {
   
 });
 
+
+//for other get request, uses wildcard *, will respond by sending the index.html file
 router.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
-  // For any other GET request (wildcard '*'),
-  // send the 'index.html' file located in the 'public' directory
+  
 });
 
 module.exports = router;
