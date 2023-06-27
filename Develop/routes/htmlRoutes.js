@@ -19,5 +19,6 @@ router.get("*", (req, res) => {
   
 });
 
+//exporting the router module to use in other files
 module.exports = router;
-// Exporting the router module for use in other files
+
