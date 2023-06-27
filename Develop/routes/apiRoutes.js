@@ -3,8 +3,9 @@ const express = require("express");
 const apiRoutes = require("./routes/apiRoutes"); 
 const htmlRoutes = require("./routes/htmlRoutes"); 
 
-const app = express(); // Creating an instance of the Express application
-const PORT = process.env.PORT || 3000; // Setting the port number for the server
+// Creating variable for express application and set the port number in the server
+const app = express(); 
+const PORT = process.env.PORT || 3000; 
 
 app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded bodies
 app.use(express.json()); // Middleware to parse JSON bodies
