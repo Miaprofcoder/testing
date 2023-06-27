@@ -24,8 +24,12 @@ class Store {
   //write data from db.json file
   async write(data) {
     try {
+      //write file using json.stringify data to db.json
       await fs.promises.writeFile("db/db.json", JSON.stringify(data));
+
+      //for any error that occurs, catch and throw the error
     } catch (error) {
+      
       throw error;
     }
   }
