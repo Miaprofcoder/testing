@@ -12,8 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); 
 app.use(express.static("public")); 
 
-app.use("/api", apiRoutes); // Using the apiRoutes module for routes starting with "/api"
-app.use("/", htmlRoutes); // Using the htmlRoutes module for routes starting with "/"
+//using the apiRoutes.js module for routes starting with /api
+app.use("/api", apiRoutes); 
+
+//using the htmlRoutes.js module for routes starting with /
+app.use("/", htmlRoutes);
 
 app.listen(PORT, () => {
   // Starting the server and listening on the specified port
