@@ -18,15 +18,18 @@ router.get("/notes", (req, res) => {
 
 });
 
+
+// when a post is made to /notes, add a new note using addNote() declared in store.js with the request body
 router.post("/notes", (req, res) => {
   store
     .addNote(req.body)
+
+    //sends the newly added note as JSON response
     .then((note) => res.json(note))
+
+    //sends 500 status code if an error occurs
     .catch((err) => res.status(500).json(err));
-  // When a POST request is made to '/notes' endpoint,
-  // add a new note using the store's addNote() method with the request body,
-  // and send the newly added note as a JSON response
-  // If an error occurs, send a 500 status code and the error message as JSON
+  
 });
 
 router.delete("/notes/:id", (req, res) => {
