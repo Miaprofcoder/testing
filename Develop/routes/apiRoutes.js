@@ -46,5 +46,6 @@ router.delete("/notes/:id", (req, res) => {
   
 });
 
+// exports router module for use in other file
 module.exports = router;
-// Exporting the router module for use in other files
+
