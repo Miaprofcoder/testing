@@ -18,7 +18,8 @@ app.use("/api", apiRoutes);
 //using the htmlRoutes.js module for routes starting with /
 app.use("/", htmlRoutes);
 
+//initiating the server and listening to the port declared above 
 app.listen(PORT, () => {
-  // Starting the server and listening on the specified port
+
   console.log(`Server is running on http://localhost:${PORT}`);
 });
