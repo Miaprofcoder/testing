@@ -30,7 +30,7 @@ Heroku Deployed Link: https://notetakemvfranzke-bfe4fd9da1f8.herokuapp.com/
 
 Video Link (user flow): https://drive.google.com/file/d/17zLIx-F-NzWiDYD7BGQRYVbENZPf64AR/view
 
-![Deployed Page](../Note-Taker/Develop/public/assets/screenshot/screenshot.jpg)
+![Deployed Page](screenshot.jpg)
 
 ## Credits
 
