@@ -30,6 +30,8 @@ Heroku Deployed Link: https://notetakemvfranzke-bfe4fd9da1f8.herokuapp.com/
 
 Video Link (user flow): https://drive.google.com/file/d/17zLIx-F-NzWiDYD7BGQRYVbENZPf64AR/view
 
+![Screenshot of deployed page]()
+
 ## Credits
 
 Below are additional resources I used aside from the activities file in Module 11 - Express
